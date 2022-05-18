@@ -5,31 +5,41 @@
 
 int main(void) {
     NodePtr head = NULL;
+    
+    while (1) {
+                printf("\n1: Insert Head, 2: Insert Tail, 3: Search 4: Delete, 5: Print, 6: Exit\n");
+                scanf("%d", &t);
 
-    int a = 1;
-    int b = 2;
-    int c = 3;
-    int d = 4;
-    int e = 5;
-
-    printf("\nTest1 - InsertAtTail\n");
-    InsertAtTail(&head, &c);
-    InsertAtTail(&head, &d);
-    InsertAtTail(&head, &e);
-    InsertAtHead(&head, &b);
-    InsertAtHead(&head, &a);
-
-    DisplayForward(&head);
-
-    printf("\nTest2 - FindNode\n");
-    NodePtr node = FindNode(&head, &c);
-    printf("%d", *(int*)(node -> data));
-
-    printf("\nTest3 - DeleteNodeByData\n");
-    DeleteNodeByData(&head, &c);
-    DisplayForward(&head);
-
-    printf("\nTest4 - DeleteNodeByData\n");
-    DeleteNodeByData(&head, &a);
-    DisplayForward(&head);
+                switch (t) {
+                case 1:
+                        printf("Oruulax utga: ");
+                        scanf("%d", &x);
+                        InsertAtHead(&head, &x);
+                        break;
+                case 2:
+                        printf("Oruulax utga: ");
+                        scanf("%d", &x);
+                        InsertAtTail(&head, &x);
+                        break;
+                case 3:
+                        printf("Ustgax utga: ");
+                        scanf("%d", &x);
+                        NodePtr node = FindNode(&head, &x);
+                        printf("%d", *(int*)(node -> data));
+                        break;
+                case 4:
+                        printf("Ustgax utga: ");
+                        scanf("%d", &x);
+                        DeleteNodeByData(&head, &x);
+                        break;
+                case 5:
+                        DisplayForward(&head);
+                        break;
+                case 6:
+                        exit(0);
+                default:
+                        break;
+                }
+        }
+        return 0;
 }
