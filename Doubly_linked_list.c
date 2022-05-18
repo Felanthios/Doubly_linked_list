@@ -38,7 +38,7 @@ void InsertTail(NodePtr *head_ptr, void *data) {
     new_node -> prev = cur_node;
 }
 
-void print(NodePtr *head_ptr) {
+void Print(NodePtr *head_ptr) {
     if (*head_ptr == NULL) return;
     NodePtr cur_node = *head_ptr;
     printf("%d", *(int*)(cur_node -> data));
