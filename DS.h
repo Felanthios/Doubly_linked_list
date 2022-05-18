@@ -5,12 +5,12 @@ typedef struct Node {
     void *data;
     struct Node *prev;
     struct Node *next;
-} *NodePtr;
+} *NodePointer;
 
-void InsertHead(NodePtr *head_ptr, void *data);
-void InsertTail(NodePtr *head_ptr, void *data);
-void print(NodePtr *head_ptr);
-NodePtr SearchNode(NodePtr *head_ptr, void *data);
-void DeleteNodeByData(NodePtr *head_ptr, void *data);
+void InsertHead(NodePointer *head_pointer, void *data);
+void InsertTail(NodePointer *head_pointer, void *data);
+void print(NodePointer *head_pointer);
+NodePointer SearchNode(NodePointer *head_pointer, void *data);
+void DeleteNodeByData(NodePointer *head_pointer, void *data);
 
 #endif
