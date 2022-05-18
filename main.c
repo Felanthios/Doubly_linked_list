@@ -4,7 +4,7 @@
 #include "DS.h"
 
 int main(void) {
-    NodePtr head = NULL;
+    NodePointer head = NULL;
     
     while (1) {
                 printf("\n1: Insert Head, 2: Insert Tail, 3: Search 4: Delete, 5: Print, 6: Exit\n");
@@ -24,7 +24,7 @@ int main(void) {
                 case 3:
                         printf("Ustgax utga: ");
                         scanf("%d", &x);
-                        NodePtr node = SearchNode(&head, &x);
+                        NodePointer node = SearchNode(&head, &x);
                         printf("%d", *(int*)(node -> data));
                         break;
                 case 4:
