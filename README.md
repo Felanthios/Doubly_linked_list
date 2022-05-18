@@ -1,1 +1,1 @@
-# Doubly_linked_list
+# Doubly linked list
