@@ -3,31 +3,31 @@
 
 #include "DS.h"
 
-void InsertHead(NodePtr *head_ptr, void *data) {
-    NodePtr new_node = (NodePtr) malloc(sizeof(struct Node));
+void InsertHead(NodePointer *head_pointer, void *data) {
+    NodePointer new_node = (NodePointer) malloc(sizeof(struct Node));
     new_node -> data = data;
-    if (*head_ptr == NULL) {
+    if (*head_pointer == NULL) {
         new_node -> prev = NULL;
         new_node -> next = NULL;
         return;  
     }
     
-    (*head_ptr) -> prev = new_node;
-    new_node -> next = *head_ptr;
+    (*head_pointer) -> prev = new_node;
+    new_node -> next = *head_pointer;
     new_node -> prev = NULL;
-    *head_ptr = new_node;
+    *head_pointer = new_node;
 }
 
-void InsertTail(NodePtr *head_ptr, void *data) {
+void InsertTail(NodePointer *head_pointer, void *data) {
     
-    NodePtr new_node = (NodePtr) malloc(sizeof(struct Node));
+    NodePointer new_node = (NodePointer) malloc(sizeof(struct Node));
     new_node -> data = data;
     new_node -> next = NULL;
-    NodePtr cur_node = *head_ptr;
+    NodePointer cur_node = *head_pointer;
     
-    if (*head_ptr == NULL) {
+    if (*head_pointer == NULL) {
         new_node -> prev = NULL;
-        *head_ptr = new_node;
+        *head_pointer = new_node;
         return;
     }
     
@@ -38,9 +38,10 @@ void InsertTail(NodePtr *head_ptr, void *data) {
     new_node -> prev = cur_node;
 }
 
-void Print(NodePtr *head_ptr) {
-    if (*head_ptr == NULL) return;
-    NodePtr cur_node = *head_ptr;
+void Print(NodePointer *head_pointer) {
+    if (*head_pointer == NULL)
+        return;
+    NodePointer cur_node = *head_pointer;
     printf("%d", *(int*)(cur_node -> data));
     while (cur_node -> next != NULL) {
         cur_node = cur_node -> next;
@@ -48,19 +49,20 @@ void Print(NodePtr *head_ptr) {
     }
 }
 
-NodePtr SearchNode(NodePtr *head_ptr, void *data) {
-    NodePtr cur_node = *head_ptr;
+NodePointer SearchNode(NodePointer *head_pointer, void *data) {
+    NodePointer cur_node = *head_pointer;
     while (cur_node != NULL && cur_node -> data != data) {
         cur_node = cur_node -> next;
     }
     return cur_node;
 }
 
-void DeleteNodeByData(NodePtr *head_ptr, void *data) {
-    NodePtr node = SearchNode(head_ptr, data);
-    if (node == NULL) return;
-    if (*head_ptr == node) {
-        *head_ptr = node -> next;
+void DeleteNodeByData(NodePointer *head_pointer, void *data) {
+    NodePointer node = SearchNode(head_pointer, data);
+    if (node == NULL)
+        return;
+    if (*head_pointer == node) {
+        *head_pointer = node -> next;
     }
     if (node -> next != NULL) {
         node -> next -> prev = node -> prev;
