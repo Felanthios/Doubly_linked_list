@@ -14,17 +14,17 @@ int main(void) {
                 case 1:
                         printf("Oruulax utga: ");
                         scanf("%d", &x);
-                        InsertAtHead(&head, &x);
+                        InsertHead(&head, &x);
                         break;
                 case 2:
                         printf("Oruulax utga: ");
                         scanf("%d", &x);
-                        InsertAtTail(&head, &x);
+                        InsertTail(&head, &x);
                         break;
                 case 3:
                         printf("Ustgax utga: ");
                         scanf("%d", &x);
-                        NodePtr node = FindNode(&head, &x);
+                        NodePtr node = SearchNode(&head, &x);
                         printf("%d", *(int*)(node -> data));
                         break;
                 case 4:
@@ -33,7 +33,7 @@ int main(void) {
                         DeleteNodeByData(&head, &x);
                         break;
                 case 5:
-                        DisplayForward(&head);
+                        Print(&head);
                         break;
                 case 6:
                         exit(0);
