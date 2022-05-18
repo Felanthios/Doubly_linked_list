@@ -8,9 +8,9 @@ int main(void) {
     
     while (1) {
                 printf("\n1: Insert Head, 2: Insert Tail, 3: Search 4: Delete, 5: Print, 6: Exit\n");
-                scanf("%d", &t);
+                scanf("%d", &x);
 
-                switch (t) {
+                switch (x) {
                 case 1:
                         printf("Oruulax utga: ");
                         scanf("%d", &x);
