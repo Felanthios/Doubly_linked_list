@@ -1,41 +1,46 @@
-#include <stdio.h>
-#include <stdlib.h>
+int main() {
 
-#include "DS.h"
-
-int main(void) {
-    NodePointer head = NULL;
-    
+    int x, position, value;
     while (1) {
-                printf("\n1: Insert Head, 2: Insert Tail, 3: Search 4: Delete, 5: Print, 6: Exit\n");
+                printf("*************************\n");
+                printf("\n1: Insert at first\n2: Insert at last\n3: Insert at position \n4: Search\n5: Delete\n6: Forward Traverse\n7: Backward Traverse\n8: Exit\n");
                 scanf("%d", &x);
 
                 switch (x) {
                 case 1:
                         printf("Oruulax utga: ");
-                        scanf("%d", &x);
-                        InsertHead(&head, &x);
+                        scanf("%d", &value);
+                        insert_at_first(value);
                         break;
                 case 2:
                         printf("Oruulax utga: ");
-                        scanf("%d", &x);
-                        InsertTail(&head, &x);
+                        scanf("%d", &value);
+                        insert_at_last(value);
                         break;
                 case 3:
-                        printf("Ustgax utga: ");
-                        scanf("%d", &x);
-                        NodePointer node = SearchNode(&head, &x);
-                        printf("%d", *(int*)(node -> data));
+                        printf("Oruulax bairlal: ");
+                        scanf("%d", &position);
+                        printf("Oruulax utga: ");
+                        scanf("%d", &value);
+                        insert_at_position(position, value);
                         break;
                 case 4:
-                        printf("Ustgax utga: ");
-                        scanf("%d", &x);
-                        DeleteNodeByData(&head, &x);
+                        printf("Haih utga: ");
+                        scanf("%d", &value);
+                        search(value);
                         break;
                 case 5:
-                        Print(&head);
+                        printf("Ustgax utga: ");
+                        scanf("%d", &value);
+                        delete_node(value);
                         break;
                 case 6:
+                        forward_traverse();
+                        break;
+                case 7:
+                        backward_traverse();
+                        break;
+                case 8:
                         exit(0);
                 default:
                         break;
